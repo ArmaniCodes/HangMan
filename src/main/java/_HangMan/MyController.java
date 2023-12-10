@@ -2,6 +2,8 @@ package _HangMan;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -10,18 +12,54 @@ public class MyController {
 	private ImageView myImageView;
 	@FXML
 	private Button startButton;
-	
+	@FXML
+	private CheckBox myCheckBox;
+	@FXML
+	private TextField lengthBox;
 	private int currentImageNum = 0;
 	private String imageDirectory = "/_HangMan/HangManImages/";
 	
+	
+	// Ensure user puts a numerical character in range
+	private void inputValidation() {
+		String length = lengthBox.getText();
+		int lengthOfWord = -1;
+		try { 
+			lengthOfWord = Integer.parseInt(length);
+		}catch (NumberFormatException e) {
+			System.out.println("Invalid input. Please enter a valid number.");
+			return;
+		}
+		if (  lengthOfWord <= 15 && lengthOfWord > 1) {
+			// Good
+		}
+		else {
+			System.out.println("Invalid Range. Range 2-15");
+		}
+		
+	}
+	
+	
 
+	private void startGame() {
+		//Check if correct Number is inputted
+		if (this.myCheckBox.isSelected()) {
+			inputValidation();
+		}
+		else {
+			
+			//Create HangMan Game
+		}
+		
+	}
+	
+	
+	
 	public void initialize() {
 		startButton.setOnAction(event -> {
-			changeImage();
-			
+			startGame();
 		}
 );
-		
 	
 	}
 	
