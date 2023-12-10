@@ -29,6 +29,16 @@ public class MyController {
 	//Game of hangMan
 	private HangMan hm;
 	
+	private void disableStartButton() {
+		startButton.setDisable(true);
+		startButton.setVisible(false);
+	}
+	
+	private void enableStartButton() {
+		startButton.setDisable(false);
+		startButton.setVisible(true);
+	}
+	
 	// Ensure user puts a numerical character in range
 	private void inputValidation() {
 		String length = lengthBox.getText();
