@@ -11,7 +11,17 @@ public class HangMan {
 	private HashSet<Character> hs = new HashSet<>();
 	private int discoveredLetters = 0;
 	
+	HangMan(){
+		this.word = GenerateWord.generateWord();
+		this.word = word.replace("[", "").replace("]", "").replace("\"", "");// filter out "" and []
+		this.length = word.length();	
+	}
 	
+	HangMan(int length){
+		this.word = GenerateWord.generateWord(length);
+		this.word = word.replace("[", "").replace("]", "").replace("\"", "");  // filter out "" and []
+		this.length = length;
+	}
 	
 	
 	
