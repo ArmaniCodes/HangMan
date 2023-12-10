@@ -6,6 +6,9 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 public class MyController {
 	@FXML
@@ -16,8 +19,10 @@ public class MyController {
 	private CheckBox myCheckBox;
 	@FXML
 	private TextField lengthBox;
+	@FXML
+	private AnchorPane myAnchor;
 	
-
+	private Text[] underScoreList;
 	private int currentImageNum = 0;
 	private String imageDirectory = "/_HangMan/HangManImages/";
 	
@@ -44,15 +49,42 @@ public class MyController {
 	}
 	
 	
+	//Formats each new underLine and sets their position to the previous underlines position + 25 
+	private void formatUnderLine(Text punderline, Text underline) {
+		underline.setFont(Font.font("monospace" , 35.0));
+		underline.setLayoutX((punderline).getLayoutX() + 25);
+		underline.setLayoutY(345);
+		this.myAnchor.getChildren().add(underline);
+	}
+	
+	private void setUpWords() {
+		this.underScoreList = new Text[this.hm.getWordLength()];	// Initialize underScore Array
+		
+		// Initialize First underline
+		Text ogUnderLine = new Text("_");
+		ogUnderLine.setFont(Font.font("monospace" , 35.0));
+		ogUnderLine.setLayoutX(14);
+		ogUnderLine.setLayoutY(345);
+		this.myAnchor.getChildren().add(ogUnderLine);
+		underScoreList[0] = ogUnderLine;
+		
+		//Create other underLines
+		for (int i = 1; i < this.hm.getWordLength(); ++i ) {
+			Text underscoreText = new Text("_");
+			formatUnderLine(underScoreList[i-1], underscoreText);
+			this.underScoreList[i] = underscoreText;
+		}
+	}
 
 	private void startGame() {
-		//Check if correct Number is inputted
+		//If inputLength checkbox Checked then we check if user input is Correct
 		if (this.myCheckBox.isSelected()) {
 			inputValidation();
+			setUpWords();
 		}
 		else {
 			hm = new HangMan();
-			
+			setUpWords();
 		}
 		
 	}
@@ -62,6 +94,7 @@ public class MyController {
 	public void initialize() {
 		startButton.setOnAction(event -> {
 			startGame();
+			
 		}
 );
 	
