@@ -16,9 +16,13 @@ public class MyController {
 	private CheckBox myCheckBox;
 	@FXML
 	private TextField lengthBox;
+	
+
 	private int currentImageNum = 0;
 	private String imageDirectory = "/_HangMan/HangManImages/";
 	
+	//Game of hangMan
+	private HangMan hm;
 	
 	// Ensure user puts a numerical character in range
 	private void inputValidation() {
@@ -31,7 +35,7 @@ public class MyController {
 			return;
 		}
 		if (  lengthOfWord <= 15 && lengthOfWord > 1) {
-			// Good
+			hm = new HangMan(lengthOfWord);
 		}
 		else {
 			System.out.println("Invalid Range. Range 2-15");
@@ -47,8 +51,8 @@ public class MyController {
 			inputValidation();
 		}
 		else {
+			hm = new HangMan();
 			
-			//Create HangMan Game
 		}
 		
 	}
