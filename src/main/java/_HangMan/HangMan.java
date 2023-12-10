@@ -24,5 +24,14 @@ public class HangMan {
 	}
 	
 	
+
+	public int getWordLength() {
+		return this.length;
+	}
+	
+	public String getWord() {
+		return word;
+	}
+	
 	
 }
