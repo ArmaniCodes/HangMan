@@ -117,10 +117,10 @@ public class MyController {
 			setUpWords();
 		}
 		
-		
 		// If hangman Game created then we can continue with game setup
 		if (hm != null){
 			disableStartButton();
+			enableSubmits();
 		}
 		
 		
@@ -137,6 +137,15 @@ public class MyController {
 		}
 );
 	
+		submitButton.setOnAction(event ->{
+			
+			
+			
+			
+		});
+		
+		
+		
 	}
 	
 	private void changeImage() {
