@@ -9,6 +9,7 @@ public class HangMan {
 	private String word;
 	private HashMap<Character,ArrayList<Integer>> hp = new HashMap<>();
 	private HashSet<Character> hs = new HashSet<>();
+	private HashSet<Character> wrongLetters = new HashSet<>();
 	private int discoveredLetters = 0;
 	
 	
@@ -71,6 +72,10 @@ public class HangMan {
 	public void discoverLetter(char c) {
 		hs.add(c);
 		this.discoveredLetters +=1;
+	}
+	
+	public void discoverWrongLetter(char c) {
+		wrongLetters.add(c);
 	}
 	
 	public int getWordLength() {
