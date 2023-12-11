@@ -192,8 +192,9 @@ public class MyController {
 				startGame();
 			}
 			if(gameState == "Won") {
-				
-				
+				cleanUp();
+				gameState = null;
+				startButton.setText("Start");
 			}
 		
 			
