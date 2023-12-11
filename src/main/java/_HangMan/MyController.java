@@ -34,6 +34,8 @@ public class MyController {
 
 	// Game of hangMan
 	private HangMan hm;
+	
+	private String gameState;
 
 	private void enableSubmits() {
 		submitField.setDisable(false);
@@ -121,6 +123,7 @@ public class MyController {
 			disableStartButton();
 			enableSubmits();
 			changeImage();
+			gameState = "Started";
 		}
 	}
 	
@@ -131,11 +134,13 @@ public class MyController {
 		if (hm.getDiscoveredLetters() == hm.getWordLength()) {
 			enableStartButton();
 			startButton.setText("You won! Restart?");
+			gameState = "Won";
 			return;
 		}
 		else {
 			enableStartButton();
 			startButton.setText("You lost! Reveal word?");
+			gameState = "Lost";
 			return;
 		}
 	}
@@ -175,7 +180,14 @@ public class MyController {
 
 	public void initialize() {
 		startButton.setOnAction(event -> {
-			startGame();
+			if (gameState == null) { // if game state null then game hasn't started
+				startGame();
+			}
+			if(gameState == "Won") {
+				
+				
+			}
+		
 			
 		});
 
@@ -189,7 +201,6 @@ public class MyController {
 		//Game ended because user failed to guess 
 		if (currentImageNum >= 7) {
 			currentImageNum = 0;
-			
 			endGame();			
 		}
 		Image newImage = new Image(getClass().getResourceAsStream(imageDirectory + ++currentImageNum + ".png"));
