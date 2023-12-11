@@ -27,6 +27,8 @@ public class MyController {
 	private TextField submitField;
 	@FXML
 	private Button submitButton;
+	@FXML
+	private Text message;
 
 	private Text[] underScoreList;
 	private int currentImageNum = 1;
@@ -152,16 +154,31 @@ public class MyController {
 	}
 	
 	
+	
+	private void gameMessage(char lttr) {
+		message.setVisible(true);
+		message.setText("Message: " + lttr + " has already been guessed!");
+	}
+	
 	//We check if game is finished before and after submitting so that the player doesn't need to click the button again to see if they won.
 	private void submitAnswer() {
+		message.setVisible(false);
 		checkIfGameFinished();
 		String letter = submitField.getText();
 		if (letter.length() == 1 && Character.isAlphabetic(letter.charAt(0))) { // Check if valid letter
 			ArrayList<Integer> indexlist = hm.checkLetter(letter.charAt(0));
 			char lttr = letter.charAt(0);
-			if (indexlist == null) {
-				changeImage(); // if returns null then we know letter doesn't exist in word so we can change
-								// image of stickman!
+			
+			if (indexlist == null) {// if returns null then we know letter doesn't exist in word so we can change
+				if (!(hm.checkWrongLetter(lttr))){	//We dont want to change the image if the user was wrong once already.
+					hm.discoverWrongLetter(lttr);
+					changeImage(); // image of stickman!
+				}		
+				else {	//Warn player that they already guessed and to be nice we don't change the image again.
+					gameMessage(lttr);
+				}
+				
+				
 			} else {
 
 				if (!(hm.isDiscovered(lttr))) { // If returns false then letter hasn't been discovered yet
@@ -183,6 +200,7 @@ public class MyController {
 			this.myAnchor.getChildren().remove(i);
 		}
 		underScoreList = null;
+		hm = null;
 	}
 	
 	public void revealWord() {
