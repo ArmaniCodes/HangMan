@@ -125,7 +125,14 @@ public class MyController {
 	}
 	
 	
-	
+	private void checkIfGameFinished() {
+		if (hm.getDiscoveredLetters() == hm.getWordLength()) {
+			
+			
+			
+		}
+		
+	}
 	
 	
 	private void submitAnswer() {
@@ -166,8 +173,12 @@ public class MyController {
 	}
 
 	private void changeImage() {
+		//Game ended because user failed to guess 
 		if (currentImageNum >= 7) {
 			currentImageNum = 0;
+			
+			
+			
 		}
 		Image newImage = new Image(getClass().getResourceAsStream(imageDirectory + ++currentImageNum + ".png"));
 		myImageView.setImage(newImage);
