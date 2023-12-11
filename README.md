@@ -33,3 +33,4 @@ You can start a new game, guess letters, and reveal the word if you lose!
 ![image](https://github.com/ArmaniCodes/HangMan/assets/103855175/cbee8b7f-2f15-48af-b2c4-36dfa7a06e26)
 
 
+![hangman](https://github.com/ArmaniCodes/HangMan/assets/103855175/a580ce86-5274-4ead-bf2e-ef06f5ffc107)
