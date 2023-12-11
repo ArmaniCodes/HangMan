@@ -2,7 +2,7 @@
 Play a quick game of Hangman. Generate an infinite amount of words so the replability is infinite! 
 
 ## Features
-- Randomly generate a wordfor the players to guess
+- Randomly generate a word for the players to guess
 - Allows the player to specify the length of the randomly generated word.
 - Interactive JavaFX GUI
 
