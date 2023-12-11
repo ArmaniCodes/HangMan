@@ -44,8 +44,8 @@
             <Font size="35.0" />
          </font>
       </Text>
-       <Button layoutX="22.0" layoutY="440.0" mnemonicParsing="false" text="Hint?" visible="false" />
-      <Text fill="RED" layoutX="16.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hint:" wrappingWidth="380.0361328125" visible = "false">
+       <Button fx:id = "hintButton" layoutX="22.0" layoutY="440.0" mnemonicParsing="false" text="Hint?" visible="false" />
+      <Text fx:id = "hintText" fill="RED" layoutX="16.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hint:" wrappingWidth="380.0361328125" visible = "false">
          <font>
             <Font size="9.0" />
          </font>
