@@ -22,3 +22,6 @@ git clone https://github.com/armanicodes/HangMan.git
 mvn compile
 mvn javafx:run
 ```
+## Usage
+After running the application, the user interface will guide you through playing the game.
+You can start a new game, guess letters, and reveal the word if you lose!
