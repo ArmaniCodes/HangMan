@@ -125,13 +125,22 @@ public class MyController {
 	}
 	
 	
-	private void checkIfGameFinished() {
+	private void endGame() {
+		disableSubmits();
+		
+		//This means player won
 		if (hm.getDiscoveredLetters() == hm.getWordLength()) {
-			
-			
 			
 		}
 		
+		
+		
+	}
+	
+	private void checkIfGameFinished() {
+		if (hm.getDiscoveredLetters() == hm.getWordLength()) {
+			endGame();
+		}	
 	}
 	
 	
@@ -178,8 +187,7 @@ public class MyController {
 		if (currentImageNum >= 7) {
 			currentImageNum = 0;
 			
-			
-			
+			endGame();			
 		}
 		Image newImage = new Image(getClass().getResourceAsStream(imageDirectory + ++currentImageNum + ".png"));
 		myImageView.setImage(newImage);
