@@ -25,3 +25,9 @@ mvn javafx:run
 ## Usage
 After running the application, the user interface will guide you through playing the game.
 You can start a new game, guess letters, and reveal the word if you lose!
+
+## Screenshots
+![image](https://github.com/ArmaniCodes/HangMan/assets/103855175/852b18e6-3714-4f9a-8b06-56f7b179cd6d)
+![image](https://github.com/ArmaniCodes/HangMan/assets/103855175/824cb8f9-cba8-4cc7-9bf3-ce9a7048f304)
+![image](https://github.com/ArmaniCodes/HangMan/assets/103855175/ab115655-83ab-48a1-9ae4-bf74a2fff7bf)
+
