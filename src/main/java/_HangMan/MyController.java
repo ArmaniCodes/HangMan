@@ -127,10 +127,11 @@ public class MyController {
 	
 	private void endGame() {
 		disableSubmits();
-		
 		//This means player won
 		if (hm.getDiscoveredLetters() == hm.getWordLength()) {
-			
+			enableStartButton();
+			startButton.setText("You won! Restart?");
+			return;
 		}
 		
 		
