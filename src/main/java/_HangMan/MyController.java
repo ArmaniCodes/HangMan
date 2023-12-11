@@ -97,6 +97,13 @@ public class MyController {
 			setUpWords();
 		}
 		
+		if (hm != null){
+			disableStartButton();
+			
+		}
+		
+		
+		
 	}
 	
 	
