@@ -29,6 +29,10 @@ public class MyController {
 	private Button submitButton;
 	@FXML
 	private Text message;
+	@FXML
+	private Button hintButton;
+	@FXML
+	private Text hintText;
 
 	private Text[] underScoreList;
 	private int currentImageNum = 1;
