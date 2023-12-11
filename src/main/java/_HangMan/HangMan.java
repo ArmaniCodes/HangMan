@@ -55,7 +55,24 @@ public class HangMan {
 	}
 	
 	
-
+	
+	public int getDiscoveredLetters() {
+		return discoveredLetters;
+		}
+	
+	//Returns true if a letter has been discovered
+	public boolean isDiscovered (char c) {
+		return hs.contains(c);
+	}
+	
+	//Adds a letter to a hashset 
+	//We use a hashset to know if a letter has been discovered yet or not so we don't end up rediscovering letters.
+	//We use discoveredLetters to know if the game has ended or not
+	public void discoverLetter(char c) {
+		hs.add(c);
+		this.discoveredLetters +=1;
+	}
+	
 	public int getWordLength() {
 		return this.length;
 	}
