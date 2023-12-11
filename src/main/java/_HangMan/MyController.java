@@ -202,13 +202,11 @@ public class MyController {
 				gameState = null;
 				startButton.setText("Start");
 			}
-			
 			if(gameState == "Lost") {
 				revealWord();
 				startButton.setText("Restart?");
 				gameState = "Won";
 			}
-			
 		});
 
 		submitButton.setOnAction(event -> {
