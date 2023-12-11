@@ -120,8 +120,8 @@ public class MyController {
 
 		// If hangman Game created then we can continue with game setup
 		if (hm != null) {
-			setUpWords();
 			disableStartButton();
+			setUpWords();
 			enableSubmits();
 			changeImage();
 			gameState = "Started";
