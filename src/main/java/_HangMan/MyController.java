@@ -186,7 +186,10 @@ public class MyController {
 	}
 	
 	public void revealWord() {
-		
+		String word = hm.getWord();
+		for (int i = 0; i < underScoreList.length; ++i) {
+			underScoreList[i].setText("" + word.charAt(i));
+		}
 	}
 	
 	public void initialize() {
