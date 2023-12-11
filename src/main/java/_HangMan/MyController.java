@@ -114,14 +114,13 @@ public class MyController {
 		// If inputLength checkbox Checked then we check if user input is Correct
 		if (this.myCheckBox.isSelected()) {
 			inputValidation();
-			setUpWords();
 		} else {
 			hm = new HangMan();
-			setUpWords();
 		}
 
 		// If hangman Game created then we can continue with game setup
 		if (hm != null) {
+			setUpWords();
 			disableStartButton();
 			enableSubmits();
 			changeImage();
