@@ -177,7 +177,12 @@ public class MyController {
 		}
 
 	}
-
+	
+	public void cleanUp() {
+		
+	}
+	
+	
 	public void initialize() {
 		startButton.setOnAction(event -> {
 			if (gameState == null) { // if game state null then game hasn't started
