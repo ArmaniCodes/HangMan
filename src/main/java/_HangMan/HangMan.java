@@ -26,6 +26,20 @@ public class HangMan {
 	}
 	
 	
+	//If letter exist in HashMap we return the list of Indexs else null.
+	//We do this to later replace the underlines in the GUI with the actual letter.
+	//That's why we store the indexs 
+	public ArrayList<Integer> checkLetter(char c) {
+		ArrayList<Integer> retur = hp.get(c);
+		if (retur != null) {
+			return retur;
+		}
+	
+		return null;
+		
+	}
+	
+	
 	HangMan(){
 		this.word = GenerateWord.generateWord();
 		this.word = word.replace("[", "").replace("]", "").replace("\"", "");// filter out "" and []
