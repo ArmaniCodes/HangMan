@@ -8,6 +8,17 @@ Play a quick game of Hangman. Generate an infinite amount of words so the replab
 
 ## Prerequisites
 - JDK 11 or newer.
-- Maven (to handle dependencie of JavaFX and building the project).
+- Maven (to handle dependency of JavaFX and building the project).
 - JavaFX
 
+## Installation
+- Clone the repo to your local machine:
+```sh
+git clone https://github.com/armanicodes/HangMan.git
+```
+## Setup
+- Use Maven to compile and run the project:
+```sh
+mvn compile
+mvn javafx:run
+```
