@@ -8,7 +8,7 @@ import java.net.URL;
 public class GenerateWord {
 	
 	//Method to sendGetRequest to a URL
-	private static String sendGetRequest(String urlStr) throws Exception {
+	protected static String sendGetRequest(String urlStr) throws Exception {
 	    StringBuilder result = new StringBuilder();
 	    URL url = new URL(urlStr);
 	    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
