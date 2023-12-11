@@ -131,9 +131,7 @@ public class MyController {
 	
 	public void initialize() {
 		startButton.setOnAction(event -> {
-			
 			startGame();
-			
 		}
 );
 	
