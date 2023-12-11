@@ -21,6 +21,10 @@ public class MyController {
 	private TextField lengthBox;
 	@FXML
 	private AnchorPane myAnchor;
+	@FXML
+	private TextField submitField;
+	@FXML
+	private Button submitButton;
 	
 	private Text[] underScoreList;
 	private int currentImageNum = 0;
@@ -29,6 +33,22 @@ public class MyController {
 	//Game of hangMan
 	private HangMan hm;
 	
+	private void enableSubmits() {
+		submitField.setDisable(false);
+		submitField.setVisible(true);
+		submitButton.setDisable(false);
+		submitButton.setVisible(true);
+		
+	}
+	
+	private void disableSubmits() {
+		submitField.setDisable(true);
+		submitField.setVisible(false);
+		submitButton.setDisable(true);
+		submitButton.setVisible(false);
+		
+	}
+		
 	private void disableStartButton() {
 		startButton.setDisable(true);
 		startButton.setVisible(false);
@@ -111,6 +131,7 @@ public class MyController {
 	
 	public void initialize() {
 		startButton.setOnAction(event -> {
+			
 			startGame();
 			
 		}
