@@ -179,7 +179,10 @@ public class MyController {
 	}
 	
 	public void cleanUp() {
-		
+		for(Text i: underScoreList) {
+			this.myAnchor.getChildren().remove(i);
+		}
+		underScoreList = null;
 	}
 	
 	
