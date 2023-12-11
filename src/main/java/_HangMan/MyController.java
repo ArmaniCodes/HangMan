@@ -133,9 +133,11 @@ public class MyController {
 			startButton.setText("You won! Restart?");
 			return;
 		}
-		
-		
-		
+		else {
+			enableStartButton();
+			startButton.setText("You lost! Reveal word?");
+			return;
+		}
 	}
 	
 	private void checkIfGameFinished() {
