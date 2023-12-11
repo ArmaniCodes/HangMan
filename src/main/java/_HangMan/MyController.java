@@ -185,6 +185,9 @@ public class MyController {
 		underScoreList = null;
 	}
 	
+	public void revealWord() {
+		
+	}
 	
 	public void initialize() {
 		startButton.setOnAction(event -> {
@@ -197,6 +200,9 @@ public class MyController {
 				startButton.setText("Start");
 			}
 		
+			if(gameState == "Lost") {
+				
+			}
 			
 		});
 
