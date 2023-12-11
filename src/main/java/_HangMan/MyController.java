@@ -48,7 +48,6 @@ public class MyController {
 		submitField.setVisible(true);
 		submitButton.setDisable(false);
 		submitButton.setVisible(true);
-
 	}
 
 	private void disableSubmits() {
@@ -56,7 +55,6 @@ public class MyController {
 		submitField.setVisible(false);
 		submitButton.setDisable(true);
 		submitButton.setVisible(false);
-
 	}
 
 	private void disableStartButton() {
@@ -129,6 +127,7 @@ public class MyController {
 			enableSubmits();
 			changeImage();
 			gameState = "Started";
+			hintButton.setVisible(true);
 		}
 	}
 	
@@ -212,12 +211,25 @@ public class MyController {
 		}
 	}
 	
+	public void showHint() {
+		hintButton.setVisible(false);
+		hintText.setVisible(true);
+		String definition = GenerateHint.generateDefinition("boocoo");
+		if (definition != null) {
+		hintText.setText("Hint: " + definition);
+		}
+		else {
+			hintText.setText("Hint: Sorry! No Hint Available For This Word.");
+		}
+	}
+	
 	public void initialize() {
 		startButton.setOnAction(event -> {
 			if (gameState == null) { // if game state null then game hasn't started
 				startGame();
 			}
 			if(gameState == "Won") {
+				hintText.setVisible(false);
 				cleanUp();
 				gameState = null;
 				startButton.setText("Start");
@@ -232,7 +244,11 @@ public class MyController {
 		submitButton.setOnAction(event -> {
 			submitAnswer();
 		});
-
+			
+		hintButton.setOnAction(event -> {
+			showHint();
+		});
+		
 	}
 
 	private void changeImage() {
