@@ -177,8 +177,6 @@ public class MyController {
 				else {	//Warn player that they already guessed and to be nice we don't change the image again.
 					gameMessage(lttr);
 				}
-				
-				
 			} else {
 
 				if (!(hm.isDiscovered(lttr))) { // If returns false then letter hasn't been discovered yet
@@ -188,11 +186,12 @@ public class MyController {
 					}
 					checkIfGameFinished();
 				}
+				else {
+					gameMessage(lttr);
+				}
 
 			}
-
 		}
-
 	}
 	
 	public void cleanUp() {
