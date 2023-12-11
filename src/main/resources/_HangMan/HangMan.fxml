@@ -29,7 +29,7 @@
     <Button fx:id="startButton" layoutX="185.0" layoutY="243.0" mnemonicParsing="false" text="Start" />
       <TextField  fx:id="submitField" alignment="TOP_CENTER" layoutX="159.0" layoutY="394.0" prefHeight="25.0" prefWidth="94.0" promptText="Input Letter" visible="false"  />
       <Button  fx:id="submitButton" layoutX="179.0" layoutY="427.0" mnemonicParsing="false" text="Submit" visible="false" />
-      <Text fill="RED" layoutX="14.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Message:" wrappingWidth="303.0361328125" visible="false">
+      <Text fill="RED" fx:id="message"  layoutX="14.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Message:" wrappingWidth="303.0361328125" visible="false">
          <font>
             <Font size="11.0" />
          </font>

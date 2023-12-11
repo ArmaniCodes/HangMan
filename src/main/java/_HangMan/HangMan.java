@@ -78,6 +78,10 @@ public class HangMan {
 		wrongLetters.add(c);
 	}
 	
+	public boolean checkWrongLetter(char c) {
+		return wrongLetters.contains(c);
+	}
+	
 	public int getWordLength() {
 		return this.length;
 	}
