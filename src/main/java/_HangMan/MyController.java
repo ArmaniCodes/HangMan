@@ -135,8 +135,9 @@ public class MyController {
 	}
 	
 	
+	//We check if game is finished before and after submitting so that the player doesn't need to click the button again to see if they won.
 	private void submitAnswer() {
-
+		checkIfGameFinished();
 		String letter = submitField.getText();
 		if (letter.length() == 1 && Character.isAlphabetic(letter.charAt(0))) { // Check if valid letter
 			ArrayList<Integer> indexlist = hm.checkLetter(letter.charAt(0));
@@ -151,7 +152,7 @@ public class MyController {
 						hm.discoverLetter(lttr);
 						underScoreList[i].setText(letter);
 					}
-
+					checkIfGameFinished();
 				}
 
 			}
