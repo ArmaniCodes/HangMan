@@ -97,9 +97,10 @@ public class MyController {
 			setUpWords();
 		}
 		
+		
+		// If hangman Game created then we can continue with game setup
 		if (hm != null){
 			disableStartButton();
-			
 		}
 		
 		
