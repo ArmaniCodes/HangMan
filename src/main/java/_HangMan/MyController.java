@@ -214,13 +214,8 @@ public class MyController {
 	public void showHint() {
 		hintButton.setVisible(false);
 		hintText.setVisible(true);
-		String definition = GenerateHint.generateDefinition("boocoo");
-		if (definition != null) {
+		String definition = GenerateHint.generateDefinition(hm.getWord());
 		hintText.setText("Hint: " + definition);
-		}
-		else {
-			hintText.setText("Hint: Sorry! No Hint Available For This Word.");
-		}
 	}
 	
 	public void initialize() {
