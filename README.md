@@ -9,7 +9,7 @@ Play a quick game of Hangman. Generate an infinite amount of words so the replab
 
 ## Prerequisites
 - JDK 11 or newer.
-- Maven (to handle dependency of JavaFX and building the project).
+- Maven (to handle dependency of JavaFX, org.json, and building the project).
 
 ## Installation
 - Clone the repo to your local machine:
