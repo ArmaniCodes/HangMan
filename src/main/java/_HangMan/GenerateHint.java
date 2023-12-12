@@ -1,30 +1,13 @@
 package _HangMan;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class GenerateHint extends GenerateWord {
 
 	private static String URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 	
 	public static String parseDefinition(String json) {
-		int defIndex = 0;
-		   try{
-			    defIndex = json.indexOf("\"definition\":\"");
-		   }catch(Exception e){
-			   return null;
-		   }
-		   
-		   if (defIndex != -1){
-			   defIndex += "\"definition\":\"".length();
-			   int defEndIndex = json.indexOf("\"", defIndex);
-			   
-			   if (defEndIndex != -1) {
-	                // Extract the definition
-	                String definition = json.substring(defIndex, defEndIndex);
-	           
-	               return definition;
-	            }
-		   }
-		
-		   return null;
+		return null;
 	}
 	
 	
