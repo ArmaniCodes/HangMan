@@ -4,24 +4,27 @@ import org.json.JSONObject;
 
 public class GenerateHint extends GenerateWord {
 
-	private static String URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+	private static String URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";	//Dictionary API we are using
 	
 	public static String parseDefinition(String json) {
-		JSONArray jsonArray = new JSONArray(json);
-		JSONObject firstObj = jsonArray.getJSONObject(0);
-		JSONArray meaningsArray = firstObj.getJSONArray("meanings");
+		String definition = "Sorry! No Hint";
+
+		JSONArray jsonArr = new JSONArray(json);
+		JSONObject firstObj  = jsonArr.getJSONObject(0);
 		
+		if (firstObj.has("meanings")) {	//Check if the keyphrase meanings exist in the JSON response if it does then we may have a valid definition!
+		
+			JSONArray meaningsArray = firstObj.getJSONArray("meanings");
 		if (meaningsArray.length() > 0) {
 			JSONObject firstMeaning = meaningsArray.getJSONObject(0);
 			JSONArray definitionsArray = firstMeaning.getJSONArray("definitions");
 			  if (definitionsArray.length() > 0) {
 				  JSONObject firstDefinition = definitionsArray.getJSONObject(0);
-				  String definition = firstDefinition.getString("definition");
-				  return definition;
+				   definition = firstDefinition.getString("definition");	//Return definition of the word from the JSON response 
 			  }
 		}
-		
-		return "Sorry! No Hint";
+		}
+		return definition;	//If for some reason definition wasn't overridden then "Sorry! No Hint" is returned by default.
 	}
 	
 	
@@ -31,7 +34,7 @@ public class GenerateHint extends GenerateWord {
 		response = sendGetRequest(URL+word);
 		}
 		catch (Exception e) {
-	        e.printStackTrace();
+			return "Sorry! No Hint"; // Means definition doesn't exist for the word in the API or something else went wrong!
 	    }
 		
 		return parseDefinition(response);
